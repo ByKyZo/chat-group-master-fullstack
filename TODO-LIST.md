@@ -13,4 +13,5 @@
 - BOUTON POUR SUPPRIMER LE CHANNEL SI ADMIN DU CHANNEL ?
 - BOUTON POUR MODIFIER LE CHANNEL SI ADMIN DU CHANNEL ?
 
+- Faire en sort de donner le lead un autre membre si quitte le channel
 - Faire une popup pour le joueur banni du channel avec 2 boutons (stocker le bouton click dans la db) : 'Oh shit' : 'Nice'
