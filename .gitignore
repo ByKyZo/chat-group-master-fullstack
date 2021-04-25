@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/TODO-LIST.md
 /api-chat-group-master/node_modules
 /chat-group-master/node_modules
 
