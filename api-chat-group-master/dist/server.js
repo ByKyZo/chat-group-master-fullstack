@@ -44,7 +44,6 @@ const channel_routes_1 = __importDefault(require("./routes/channel.routes"));
 const socket_io_1 = require("socket.io");
 const message_controller_1 = __importDefault(require("./controllers/message.controller"));
 const channel_controller_1 = __importDefault(require("./controllers/channel.controller"));
-const path_1 = __importDefault(require("path"));
 const server = express_1.default();
 const httpServer = http_1.createServer(server);
 const io = new socket_io_1.Server(httpServer, {
@@ -78,10 +77,10 @@ io.on("connection", (socket) => {
     }));
 });
 // BUILD REACT
-server.use(express_1.default.static(path_1.default.join(__dirname, '../build')));
-server.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../build', 'index.html'));
-});
+// server.use(express.static(path.join(__dirname, '../build')));
+// server.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build', 'index.html'));
+// });
 // middleware
 server.use(body_parser_1.default.json());
 server.use(cors_1.default({ origin: 'http://localhost:3000', credentials: true }));
