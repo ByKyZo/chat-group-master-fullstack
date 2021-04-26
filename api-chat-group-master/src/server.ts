@@ -11,6 +11,7 @@ import channelRouter from './routes/channel.routes';
 import { Server, Socket } from 'socket.io';
 import MessageController from './controllers/message.controller';
 import ChannelController from './controllers/channel.controller';
+import path from 'path';
 
 const server = express();
 const httpServer = createServer(server);
@@ -54,7 +55,12 @@ io.on("connection", (socket: Socket) => {
     })
 });
 
+// BUILD REACT
+server.use(express.static(path.join(__dirname, '../build')));
 
+server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
 
 // middleware
 server.use(bodyParser.json());
